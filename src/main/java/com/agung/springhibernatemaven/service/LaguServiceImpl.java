@@ -18,6 +18,10 @@ public class LaguServiceImpl implements  LaguService{
     @Autowired
     LaguDao laguDao;
     
+    public void setLaguDao(LaguDao laguDao){
+        this.laguDao=laguDao;
+    }
+    
     @Override
     public List<Lagu> getLagus() {
         return laguDao.getLagus();

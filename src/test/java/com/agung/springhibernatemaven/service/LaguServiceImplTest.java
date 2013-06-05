@@ -39,7 +39,7 @@ public class LaguServiceImplTest {
     
     @Test
     public void testGetLagus(){
-        List<Lagu> daftarLagus=new ArrayList<>();
+        List<Lagu> daftarLagus=new ArrayList<Lagu>();
         daftarLagus.add(lagu);
         
         EasyMock.expect(laguDao.getLagus()).andReturn(daftarLagus);

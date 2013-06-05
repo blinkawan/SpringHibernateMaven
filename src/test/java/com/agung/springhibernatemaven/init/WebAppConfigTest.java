@@ -1,4 +1,4 @@
-package com.springhibernatemaven.init;
+package com.agung.springhibernatemaven.init;
 
 import java.util.Properties;
 import javax.annotation.Resource;

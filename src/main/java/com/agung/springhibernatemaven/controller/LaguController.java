@@ -21,6 +21,10 @@ public class LaguController {
     @Autowired
     LaguService laguService;
     
+    public void setLaguService(LaguService laguService){
+        this.laguService=laguService;
+    }
+    
     @RequestMapping(value = "/",method = RequestMethod.GET)
     public String index(Model model){
         model.addAttribute("lagus", laguService.getLagus());

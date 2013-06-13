@@ -1,0 +1,134 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="report" pageWidth="595" pageHeight="842" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="ab9b2611-86dd-4cb0-b579-6f3b8df18a07">
+	<property name="ireport.zoom" value="1.0"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="0"/>
+	<property name="net.sf.jasperreports.export.xls.ignore.cell.border" value="false"/>
+	<style name="table">
+		<box>
+			<pen lineWidth="1.0" lineColor="#000000"/>
+		</box>
+	</style>
+	<style name="table_TH" mode="Opaque" backcolor="#C8AE8C">
+		<box>
+			<topPen lineWidth="0.5" lineColor="#000000"/>
+			<bottomPen lineWidth="0.5" lineColor="#000000"/>
+		</box>
+	</style>
+	<style name="table_CH" mode="Opaque" backcolor="#E6DCCF">
+		<box>
+			<topPen lineWidth="0.5" lineColor="#000000"/>
+			<bottomPen lineWidth="0.5" lineColor="#000000"/>
+		</box>
+	</style>
+	<style name="table_TD" mode="Opaque" backcolor="#FFFFFF">
+		<box>
+			<topPen lineWidth="0.5" lineColor="#000000"/>
+			<bottomPen lineWidth="0.5" lineColor="#000000"/>
+		</box>
+	</style>
+	<subDataset name="Table Dataset 1" uuid="661d95ed-4ee3-44f6-975a-291101c55ada"/>
+	<field name="id" class="java.lang.Integer"/>
+	<field name="judul" class="java.lang.String"/>
+	<field name="penyanyi" class="java.lang.String"/>
+	<field name="pencipta" class="java.lang.String"/>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="44" splitType="Stretch">
+			<staticText>
+				<reportElement uuid="cf5fb93f-fcd3-4bea-9532-eba85a87ccc4" x="211" y="0" width="199" height="36"/>
+				<textElement>
+					<font fontName="Vijaya" size="35" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Daftar Lagu]]></text>
+			</staticText>
+		</band>
+	</title>
+	<pageHeader>
+		<band height="35" splitType="Stretch">
+			<staticText>
+				<reportElement uuid="8d29ec50-3620-40bc-80cf-0012b7fd4905" x="21" y="2" width="311" height="33" forecolor="#990000"/>
+				<textElement>
+					<font fontName="DokChampa" size="20"/>
+				</textElement>
+				<text><![CDATA[A Demo Company Report]]></text>
+			</staticText>
+		</band>
+	</pageHeader>
+	<columnHeader>
+		<band height="35" splitType="Stretch">
+			<rectangle>
+				<reportElement uuid="8cf8d687-dd8a-4b16-8634-b391f49d36d0" x="0" y="0" width="555" height="33" backcolor="#CC6600"/>
+			</rectangle>
+			<staticText>
+				<reportElement uuid="f9ce0e30-034e-4718-8d38-670187843cbc" x="21" y="10" width="100" height="20" forecolor="#000000"/>
+				<textElement>
+					<font size="15" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Id]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="b1370813-a25c-4f17-bf9e-e92ee30110d9" x="146" y="10" width="100" height="20" forecolor="#000000"/>
+				<textElement>
+					<font size="15" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Judul]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="9f56ad4d-1061-4d8e-81fa-78ce5a125100" x="274" y="10" width="100" height="20" forecolor="#000000"/>
+				<textElement>
+					<font size="15" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Penyanyi]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="c817a7bd-6de4-4f35-a0ab-f1d446c0a602" x="410" y="10" width="100" height="20" forecolor="#000000"/>
+				<textElement>
+					<font size="15" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Pencipta]]></text>
+			</staticText>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="41" splitType="Stretch">
+			<textField>
+				<reportElement uuid="1a18b686-7131-4824-b2bb-8371c01b1e4f" x="410" y="10" width="100" height="20"/>
+				<textElement/>
+				<textFieldExpression><![CDATA[$F{pencipta}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement uuid="c30a0b38-3f8d-40fa-8c5b-0e2690539927" x="21" y="10" width="100" height="20"/>
+				<textElement/>
+				<textFieldExpression><![CDATA[$F{id}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement uuid="c74ec91d-1a68-449b-a9e0-6a953fdb72e8" x="146" y="10" width="100" height="20"/>
+				<textElement/>
+				<textFieldExpression><![CDATA[$F{judul}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement uuid="9846ddd3-4359-42ce-8561-45e349341350" x="274" y="10" width="100" height="20"/>
+				<textElement/>
+				<textFieldExpression><![CDATA[$F{penyanyi}]]></textFieldExpression>
+			</textField>
+			<line>
+				<reportElement uuid="9a3719f7-9447-4ed8-acba-642ee3341f65" x="10" y="29" width="545" height="1"/>
+				<graphicElement>
+					<pen lineWidth="1.25" lineColor="#996600"/>
+				</graphicElement>
+			</line>
+		</band>
+	</detail>
+	<columnFooter>
+		<band height="45" splitType="Stretch"/>
+	</columnFooter>
+	<pageFooter>
+		<band height="54" splitType="Stretch"/>
+	</pageFooter>
+	<summary>
+		<band height="42" splitType="Stretch"/>
+	</summary>
+</jasperReport>

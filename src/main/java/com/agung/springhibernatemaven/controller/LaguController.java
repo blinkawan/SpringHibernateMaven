@@ -3,6 +3,10 @@ package com.agung.springhibernatemaven.controller;
 import com.agung.springhibernatemaven.exception.NotFoundException;
 import com.agung.springhibernatemaven.model.Lagu;
 import com.agung.springhibernatemaven.service.LaguService;
+import java.util.List;
+import javax.servlet.http.HttpServletResponse;
+import net.sf.jasperreports.engine.JRDataSource;
+import net.sf.jasperreports.engine.data.JRBeanCollectionDataSource;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -10,7 +14,6 @@ import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
-
 /**
  *
  * @author Agung Setiawan
@@ -67,5 +70,23 @@ public class LaguController {
         }
         laguService.deleteLagu(lagu);
         return "redirect:/";
+    }
+    
+    @RequestMapping(value = "pdf",method = RequestMethod.GET)
+    public String getPdfReport(Model model, HttpServletResponse response){        
+        List<Lagu> lagus=laguService.getLagus();
+        JRDataSource dataSource=new JRBeanCollectionDataSource(lagus);
+        
+        model.addAttribute("dataSource", dataSource);
+        return "pdfReport";
+    }
+    
+    @RequestMapping(value = "xls",method = RequestMethod.GET)
+    public String getXlsReport(Model model, HttpServletResponse response){
+        List<Lagu> lagus=laguService.getLagus();
+        JRDataSource dataSource=new JRBeanCollectionDataSource(lagus);
+        
+        model.addAttribute("dataSource", dataSource);
+        return "xlsReport";
     }
 }

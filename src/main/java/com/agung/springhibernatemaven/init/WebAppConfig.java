@@ -14,6 +14,7 @@ import org.springframework.orm.hibernate4.LocalSessionFactoryBean;
 import org.springframework.transaction.annotation.EnableTransactionManagement;
 import org.springframework.web.servlet.config.annotation.EnableWebMvc;
 import org.springframework.web.servlet.view.InternalResourceViewResolver;
+import org.springframework.web.servlet.view.XmlViewResolver;
 
 /**
  *
@@ -69,6 +70,14 @@ public class WebAppConfig {
         InternalResourceViewResolver resolver=new InternalResourceViewResolver();
         resolver.setPrefix("/WEB-INF/jsp/");
         resolver.setSuffix(".jsp");
+        resolver.setOrder(1);
         return resolver;
+    }
+    
+    @Bean
+    public XmlViewResolver xmlViewResolver(){
+        XmlViewResolver xmlViewResolver=new XmlViewResolver();
+        xmlViewResolver.setOrder(0);
+        return xmlViewResolver;
     }
 }
